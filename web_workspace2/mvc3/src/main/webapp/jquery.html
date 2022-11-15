@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+//javascript
+function add1(){
+	let ul = document.getElementById("fruit");
+	alert(ul);
+	let li = document.createElement("li");
+	li.innerHTML ="포도";
+	ul.appendChild(li);
+}
+
+//jquery
+function add2(){
+	$("#fruit").append("<li>딸기</li>");
+}
+
+</script>
+
+</head>
+<body>
+
+<ul id="fruit"></ul>
+<button onclick="add1()">항목추가 javascript</button>
+<button onclick="add2()">항목추가 jquery</button>
+</body>
+</html>

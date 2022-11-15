@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+function send(){
+	$.ajax(
+		{
+			type:"get",
+			dataType:"text",              
+			url:"/mvc3/price",	    
+			success: function(data, textStatus){
+			    //console.log(data);	  //콘솔로그에서 json 데이터 확인    			 			 
+			    //JS
+			    /*
+			    let price = document.getElementById("price");
+			    price.value = data;
+			    */
+			    //jquery
+			    $("#price").val(data);
+			},
+			error: function(data, textStatus){			 
+			},		 
+			complete:function(data, textStatus){
+				alert("done");
+			}		 
+		}
+	);	
+}
+</script>
+</head>
+<body> 
+<button   onclick="send();">서버로..</button>
+
+가격 : <input type="text" id="price">
+<a href="/mvc3/price" >서버로..</a>
+
+
+</body>
+</html>

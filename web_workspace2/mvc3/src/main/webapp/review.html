@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function send(){
+	
+	$.ajax(
+		{
+			type:"get",
+			dataType:"json",
+			url:"/mvc3/review",
+			success: function(data, textStatus){
+				console.log(data);
+			},
+			error: function( data, textStatus){			 
+		 	},		 
+		 	complete:function(data, textStatus){
+			 alert("done");
+		 	}		 
+		}
+	);	
+	
+}
+
+
+
+</script>
+
+</head>
+<body>
+
+<button onclick="send();">책리뷰</button>
+
+</body>
+</html>

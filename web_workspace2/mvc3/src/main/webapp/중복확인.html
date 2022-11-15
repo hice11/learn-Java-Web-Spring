@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+function send(){ 
+	//jquery로 태그선택
+	 let id = $("#m_id").val();
+	 
+	 $.ajax(
+		 {
+			 type:"post",
+			 dataType:"text",	 
+			 url:"/mvc3/ajaxtest",
+			 data:{m_id:id},  //서버에 전송할 데이터, Servelt에서 getParameter로 받을 데이터
+			 success:function(data, textStatus){
+				// alert(data);
+				 if(data==1){
+					 alert("아이디 중복 되었습니다");
+				 }			 
+			 },
+			 error:function(data, textStatus){
+				 alert("서버통신 에러")
+			 },
+			 complete:function(data, textStatus){
+				// alert("작업완료");
+				 
+			 }
+		 }
+	 );
+}
+	 
+	 </script>
+	 
+	 <body>
+	   아이디   <input type="text" id="m_id"> 
+	   <button onclick="send()" >아이디중복확인</button>
+	 </body>
+	 
+</html>

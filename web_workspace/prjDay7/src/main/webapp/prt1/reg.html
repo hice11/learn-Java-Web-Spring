@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>수강과목 등록</title>
+<link href="reg.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="reg.js"></script>
+</head>
+<body>
+
+<form action="regAction.jsp" name="frm" method="post">
+
+<table>
+  <caption>수강과목 등록</caption>
+  <tr>
+    <td>교과목 코드</td>
+    <td> <input type="text" name="s_id">  </td>
+  </tr>
+
+  <tr>
+    <td>교과명</td>
+    <td> <input type="text" name="s_name">  </td>
+  </tr>
+
+  <tr>
+    <td>담당강사</td>
+    <td> 
+      <select name="teacher_id">
+        <option value=""> 선택 </option>
+        <option value="1">정국교수</option>
+        <option value="2">뷔교수</option>
+        <option value="3">지민교수</option>
+        <option value="4"> 제이홉교수</option>
+        <option value="5"> 슈가교수</option>
+        <option value="6"> 진교수</option>
+        <option value="7"> RM교수</option>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>학점</td>
+    <td> <input type="text" name="s_grade">  </td>
+  </tr>
+
+  <tr>
+    <td>요일</td>
+    <td>
+      <input type="radio" name="weekday" value="M" id="M"> <label for="M">월</label>
+      <input type="radio" name="weekday" value="TU" id="TU"> <label for="TU">화</label>
+      <input type="radio" name="weekday" value="W" id="W"> <label for="W">수</label>
+      <input type="radio" name="weekday" value="TH" id="TH"> <label for="TH">목</label>
+      <input type="radio" name="weekday" value="F" id="F"> <label for="F">금</label>
+      <input type="radio" name="weekday" value="S" id="S"> <label for="S">토</label>
+    </td>
+  </tr>
+
+  <tr>
+    <td>수업시작시간</td>
+    <td> <input type="text" name="start_h">  </td>
+  </tr>
+
+  <tr>
+    <td>수업종료시간</td>
+    <td> <input type="text" name="end_h">  </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" class="tdL">
+    <input type="button" value="등록" onclick="check()">
+    <input type="button" value="첫페이지" onclick="location.href='index.html'">
+    </td>
+  </tr>
+
+</table>
+
+</form>
+
+</body>
+</html>

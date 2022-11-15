@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>리뷰 조회</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+td{
+	border: 1px solid black;
+	border-collapse: collapse;	
+	padding: 5px 10px;
+}
+</style>
+<script type="text/javascript">
+
+function reviews(){
+		//alert("load");
+		$.ajax(
+			{
+				type:"get",
+				dataType:"json",
+				url:"/mvc4/reviews",
+				success: function(data, textStatus){
+					console.log(data);
+					let rvs = data.result;
+					let table = $("#tbl");
+					for(let i=0; i<rvs.length; i++){
+						table.append(`<tr>
+						<td> ${rvs[i].title} </td>
+						<td> ${rvs[i].review}</td>
+						</tr>`)	
+					}
+				},
+				error: function(data, textStatus){
+					alert("오류 발생");
+				},
+				complete: function(data, textStatus){
+					alert("done");
+				}
+			}		
+		);
+}
+	
+//$(document).ready(reviews());
+
+
+</script>
+
+</head>
+<body>
+<table id="tbl">
+  <tr>
+    <td>제목</td>
+    <td>리뷰</td>
+  </tr>
+
+</table>
+
+<button id="btn" onclick="reviews();">조회하기</button>
+
+</body>
+</html>

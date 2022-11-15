@@ -1,0 +1,33 @@
+@charset "UTF-8";
+header{
+	padding: 20px;
+	background-color: blue;
+	color: white;
+	text-align: center;
+}
+nav{
+	padding: 10px;
+	background-color: red;
+}
+ul {
+	list-style: none;
+	display: flex;
+}
+li{
+	padding: 5px;
+}
+a {
+	text-decoration: none;
+	color: white;
+	padding: 5px;
+}
+
+section{
+	height: 500px;
+}
+
+footer{
+	padding: 20px;
+	background-color: blue;
+	color: white;
+}

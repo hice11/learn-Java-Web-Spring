@@ -1,0 +1,21 @@
+@charset "UTF-8";
+form{
+	width: 900px;
+	margin: 0 auto;
+}
+
+table{
+	width: 100%;
+}
+h3{
+	text-align: center;
+}
+table, tr, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td{
+	height: 45px;
+	box-sizing: border-box;
+	padding: 3px 5px;
+}

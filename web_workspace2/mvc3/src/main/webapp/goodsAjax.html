@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 조회</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet" href="goods.css">
+
+
+<script type="text/javascript">
+function goods(){
+	//alert("load 완료");
+	$.ajax(
+		{
+			type:"get",
+			dataType:"json",
+			url:"/mvc3/goodsJson",
+			success:function(data, textStatus){
+				console.log(data);
+				let goodsList = data.goodsList
+				//console.log(goodsList);
+				let table = $("#goods");
+				alert(goodsList.length);
+				for(let i=0; i<goodsList.length; i++){
+					table.append(`<tr>
+					<td> ${1} </td>
+					<td> ${2} </td>
+					<td> ${3} </td>
+					<td> ${4} </td>
+					<td> ${5} </td>
+					</tr>`)
+				} 
+			},
+			error:function(data, textStatus){
+				alert("오류 발생");
+			},
+			complete:function(data, textStatus){
+				alert("done");  // done이 안뜸
+			}
+		}	
+	);
+}
+//$(document).ready(goods());
+
+//goodsList[i].code
+//goodsList[i].name
+//goodsList[i].kind
+//goodsList[i].price
+
+</script>
+
+</head>
+<body>
+
+<h3>상품 조회</h3>
+<table id="goods">
+  <tr>
+    <td>
+      상품코드
+    </td>
+    <td>
+      상품명
+    </td>
+    <td>
+      종류
+    </td>
+    <td>
+      상품금액
+    </td>
+  </tr>
+ 
+   
+
+</table>
+<button onclick="goods();">조회</button>
+
+</body>
+</html>

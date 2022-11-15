@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원등록</title>
+
+<link rel="stylesheet" type="text/css" href="../css/reg.css">
+
+<script type="text/javascript">
+
+function check() {
+	
+	let frm = document.frm;
+	let userId = frm.userId;
+	let userName = frm.userName;
+	let userPw = frm.userPw;
+	let userAddr = frm.userAddr;
+	
+	if(userId.value == ""){
+		alert("아이디를 입력하세요");
+		userId.focus();
+	}
+	else if(userName.value == ""){
+		alert("이름을 입력하세요");
+		userName.focus();
+	}
+	else if (userPw.value == "") {
+		alert("비밀번호를 입력하세요");
+		userPw.focus();
+	}
+	else if (userAddr.value == "") {
+		alert("주소를 입력하세요");
+		userAddr.focus();
+	}
+	else{
+		//액션에 페이지 요청
+		frm.submit();
+	}
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<form name="frm" action="regAction.jsp" method="post">
+<table>
+  <caption>회원등록</caption>
+
+  <tr>
+    <td>아이디</td>
+    <td> <input type="text" name="userId"> </td>
+  </tr>
+  
+  <tr>
+    <td>이름</td>
+    <td> <input type="text" name="userName"> </td>
+  </tr>
+  
+  <tr>
+    <td>비밀번호</td>
+    <td> <input type="password" name="userPw"> </td>
+  </tr>
+	  
+  <tr>
+    <td>주소</td>
+    <td> <input type="text" name="userAddr"> </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
+	<button type="button" onclick="check()">등록</button>
+    <input type="reset" name="취소"> 
+	</td>
+  </tr>
+
+</table>
+</form>
+
+</body>
+</html>

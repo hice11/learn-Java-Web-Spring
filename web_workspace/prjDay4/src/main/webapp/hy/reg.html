@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>참가자 등록</title>
+<link rel="stylesheet" type="text/css" href="reg.css">
+
+<script type="text/javascript">
+  function check() {
+  	let frm = document.frm;
+  	let id = frm.join_id;
+  	let name = frm.join_nm;
+  	let birthY = frm.birthY;
+  	let birthM = frm.birthM;
+  	let birthD = frm.birthD;
+  	let gender = frm.gender;
+  	let skill = frm.specialty;
+  	let appeal = frm.charm;
+  	
+  	if (id.value == "") {
+		alert("아이디를 입력하세요");
+		id.focus();
+	}
+  	else if (name.value == "") {
+  		alert("이름을 입력하세요");
+		name.focus();
+	}
+  	else if (birthY.value == "") {
+  		alert("생년월일 년도를 입력하세요");
+  		birthY.focus();
+	}
+  	else if (birthM.value == "") {
+  		alert("생년월일 월을 입력하세요");
+  		birthM.focus();
+	}
+  	else if (birthD.value == "") {
+  		alert("생년월일 일을 입력하세요");
+  		birthD.focus();
+	}
+  	else if (gender.value == "") {
+  		alert("성별을 선택하세요");
+  		gender.focus();
+	}
+  	else if (skill.value == "") {
+  		alert("실력무대를 선택하세요");
+  		skill.focus();
+	}
+  	else if (appeal.value == "") {
+  		alert("매력무대를 입력하세요");
+  		appeal.focus();
+	}
+  	else{
+  		frm.submit();
+  	}
+  	
+  }
+
+</script>
+
+</head>
+<body>
+
+<form action="regAction.jsp" name="frm" method="post">
+
+<table>
+  <caption>참가자 등록</caption>
+  <tr>
+    <td class="tdHead">참가자ID</td>
+    <td><input type="text" name="join_id" class="inp"></td>
+  </tr>
+  
+  <tr>
+    <td class="tdHead">참가자이름</td>
+    <td><input type="text" name="join_nm" class="inp"></td>
+  </tr>
+  
+  <tr>
+    <td class="tdHead">생년월일</td>
+    <td>
+    <input type="text" name="birthY" class="birth">년
+    <input type="text" name="birthM" class="birth">월
+    <input type="text" name="birthD" class="birth">일
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="tdHead">성별</td>
+    <td>
+      <input type="radio" name="gender" id="male" value="male">
+      <label for="male">남</label>
+      <input type="radio" name="gender" id="female" value="female">
+      <label for="female">여</label>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="tdHead">실력무대</td>
+    <td>
+      <select name="specialty">
+        <option value="">선택</option>
+        <option value="V">보컬</option>
+        <option value="D">댄스</option>
+        <option value="R">랩</option>
+      </select>
+    </td>
+  </tr>
+  
+  <tr>
+    <td class="tdHead">매력무대</td>
+    <td><input type="text" name="charm" class="inp"></td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" class="subTd">
+      <button type="button" class="btn" onclick="check()">저장</button>
+      <input type="reset" name="취소" class="btn">
+    </td>
+  </tr>
+  
+</table>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+let snack = { 
+	name:"맛동산", 
+	price:3800,
+	calorie:800
+};
+
+//alert(snack.name);
+//alert(snack.price);
+//alert(snack.calorie);
+
+let snacks = [
+	{ 
+	name:"맛동산", 
+	price:3800,
+	calorie:800
+	},
+	{ 
+	name:"빼빼로", 
+	price:3800,
+	calorie:800
+	},
+	{ 
+	name:"맛동산", 
+	price:3800,
+	calorie:800
+	}
+];
+/*
+for(let i=0; i<snacks.length; i++){
+	alert(snacks[i].name);
+	alert(snacks[i].price);
+	alert(snacks[i].calorie);
+}
+*/
+let cat = {
+	name: "뽀삐",
+	see: function(){
+		alert("본다");
+	}
+}
+alert(cat.name);
+cat.see();
+
+let obj = {
+		key1: "key1",
+		key2: "key2",
+		success: function(){
+			alert("성공");
+		},
+		err: function(){
+			alert("err");
+		}
+}
+obj.success();
+obj.err();
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

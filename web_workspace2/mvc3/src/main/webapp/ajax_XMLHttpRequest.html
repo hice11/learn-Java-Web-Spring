@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script>
+
+function send(){
+	let ajax = new XMLHttpRequest();
+	 ajax.onreadystatechange = function() {
+	   if( this.readyState ==4  &&  this.status ==200 ) {
+	      alert(ajax.responseText);
+	      let result = ajax.responseText;	      
+	   }
+	};
+	 ajax.open("GET", "/mvc3/price", true );
+	 ajax.send();
+}
+</script>
+</head>
+<body>
+
+<button onclick="send();">클릭</button>
+</body>
+</html>

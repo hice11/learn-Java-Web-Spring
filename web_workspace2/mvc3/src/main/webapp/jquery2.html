@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	
+<script type="text/javascript">
+
+	//window.addEventListner("load",aaa);
+	
+	function aaa(){
+		alert("로드 완료");
+		let userId = document.getElementById("userId");
+		alert(userId.value);
+	}
+	window.addEventListner("load",function(){
+		let userId = document.getElementById("userId");
+		alert(userId.value);
+	});
+	
+	
+</script>
+
+</head>
+<body>
+
+	<input type="text" id="userId" value="test">
+	
+	<script type="text/javascript">
+	
+		let userId = document.getElementById("userId");
+		alert(userId.value);
+	</script>
+
+</body>
+</html>

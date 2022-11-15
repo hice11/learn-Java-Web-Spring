@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<script>
+
+function ck(){
+	 
+	$.ajax({
+		 type:"get",
+		 dataType:"json",              
+		 url:"http://localhost:8080/jsonTest/json3",	   //project명 : kobi
+		 success: function( data, textStatus){
+		     console.log( data);	  //콘솔로그에서 json 데이터 확인	해 보시면 좋아요 ,  실행 후 f12번	 
+		     let  list =  data.item;		    
+			 let table= $("#review");			 
+			 for( let i=0;  list.length ; i++){
+			 	let item = list[i];				 
+				//console.log( item);  // 한 row의 영화정보 콘솔 출력
+				table.append(`<tr><td> ${item.title}</td><td>${item.review}</td></tr>`);				 
+			 } 
+		 }
+		 ,
+		 error: function( data, textStatus){			 
+		 },
+		 
+		 complete:function(data, textStatus){			 
+		 }		 
+	});	
+	  
+}
+</script>
+<body>
+ 
+<button   onclick="ck();">영화정보</button>
+ <table  id="review"> 
+ </table>
+</body>
+</html>

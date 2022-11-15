@@ -1,0 +1,25 @@
+@charset "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+h2{
+	text-align: center;	
+	margin: 10px 0;
+}
+table{
+	width: 900px;
+	margin: 0 auto;
+}
+table, tr, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td{
+	padding: 3px;
+}
+input{
+	display: block;
+	padding: 3px;
+	margin: 10px auto;
+}

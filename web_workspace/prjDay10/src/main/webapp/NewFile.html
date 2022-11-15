@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	let div = document.createElement("div");
+	document.body.appendChild(div);
+	div.classList.add("div1");
+	div.style.width = "500px";
+	div.style.height = "300px";
+	div.style.backgroundColor = "black";
+	div.style.color = "white";
+	let gugu="";
+	for(let i=1; i<10; i++){
+		for(let j=2; j<10; j++){
+			gugu += j+"x"+i+"="+(j*i)+"&nbsp&nbsp";
+		}
+		gugu += "<br>";
+	}
+	div.innerHTML= gugu;
+	
+</script>
+
+</body>
+</html>

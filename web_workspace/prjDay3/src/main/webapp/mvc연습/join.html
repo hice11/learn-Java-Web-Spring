@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+
+<style>
+* {
+	margin: 10px;
+}
+
+form {
+	width: 500px;
+	text-align: center;
+	margin: 10px auto;
+}
+
+table {
+	width: 500px;
+	text-align: left;
+	margin-top: 10px;
+}
+
+table, th, td {
+	border: 1px solid gray;
+	border-collapse: collapse;
+	padding: 3px;
+}
+
+th, td {
+	height: 36px;
+	font-weight: 500;
+	font-size: 15px;
+}
+
+th {
+	width: 120px;
+	padding-left: 10px;
+}
+
+td {
+	padding: 1px 0 1px 2px;
+}
+
+input {
+	width: 165px;
+	height: 30px;
+	box-sizing: border-box;
+	border: 0.5px solid gray;
+}
+
+button {
+	width: 125px;
+	height: 30px;
+	box-sizing: border-box;
+	background-color: lightgray;
+	border: 1px solid lightgray;
+	cursor: pointer;
+	font-weight: 500;
+}
+
+select {
+	width: 125px;
+	height: 30px;
+	box-sizing: border-box;
+	border: 0.5px solid gray;
+	padding: 0;
+	margin: 0 2px 0 10px;
+}
+</style>
+
+
+</head>
+<body>
+
+
+<form action="join.sc" method="post">
+
+<h2> 회원가입 </h2>
+<table>
+
+<tr>
+    <th>이름</th>
+    <td>
+        <input type="text" name="name">
+    </td>
+</tr>
+
+<tr>
+    <th>아이디</th>
+    <td>
+        <input type="text" name="id">
+        <button>중복확인</button>
+    </td>
+</tr>
+
+<tr>
+    <th>비밀번호</th>
+    <td>
+        <input type="password" name="pw" id="">
+    </td>
+</tr>
+
+<tr>
+    <th>비밀번호 확인</th>
+    <td>                        
+        <input type="password" name="pw2" id="">
+    </td>
+</tr>
+
+<tr>
+    <th>학년/반</th>
+    <td>
+        <select name="grade" id="">
+            <option value="">선택하세요</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        학년
+        <select name="cls" id="">
+            <option value="">선택하세요</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        반
+    </td>
+</tr>
+
+</table>
+
+<button>가입하기</button>
+
+</form>
+
+
+
+</body>
+</html>

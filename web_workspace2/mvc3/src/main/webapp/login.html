@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+	
+function check(){
+	let idTag = document.getElementById("id");
+	alert(idTag.value);
+}
+
+function check2(){
+	let id = $("#id").val();
+	alert(id);
+}
+
+
+</script>
+
+</head>
+<body>
+<input type="text" name="id" id="id">
+<input type="password" name="pw" id="pw">
+
+<input type="button" value="로그인" onclick="check2()">
+
+</body>
+</html>

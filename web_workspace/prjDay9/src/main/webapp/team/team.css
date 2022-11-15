@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+
+body{
+background-image:url('https://cdn.class101.net/images/53a14415-57eb-4d3c-b740-577ba433ad80');	 	
+}
+
+.show{
+  width:400px;
+  height:600px;
+  line-height:300px;
+  text-align:center;
+  margin:0px auto;   
+  font-size:30px;
+  border: 1px solid black;
+  
+  
+}

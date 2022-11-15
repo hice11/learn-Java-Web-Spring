@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+table{
+	width: 800px;
+	margin: 10px auto;
+}
+
+table, tr, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td{
+	padding: 3px;
+}
+a{
+	text-decoration: none;
+}
+input{
+	display: block;
+	padding: 3px;
+	margin: 10px auto;
+}

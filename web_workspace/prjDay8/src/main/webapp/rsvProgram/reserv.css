@@ -1,0 +1,44 @@
+@charset "UTF-8";
+*{
+	padding: 0;
+	margin: 0;
+}
+form{
+	width: 600px;
+	margin: 20px auto;
+}
+caption{
+	font-weight: bold;
+	font-size: 20px;
+	margin: 20px 0;
+}
+table{
+	width: 100%;
+	margin: 20px auto;
+}
+table, tr, td{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td{
+	padding: 5px 10px;
+}
+td:nth-child(1){
+	width: 220px;
+	text-align: center;
+}
+
+.tdL{
+	text-align: center;
+}
+input[type="text"]{
+	height: 23px;
+}
+input[type="button"], input[type="reset"]{
+	padding: 3px 10px;
+}
+select{
+	width: 75px;
+	height: 25px;
+	padding: 0 2px;
+}

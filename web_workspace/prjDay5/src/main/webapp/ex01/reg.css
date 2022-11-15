@@ -1,0 +1,59 @@
+@charset "UTF-8";
+form{
+	width: 600px;
+	margin: 0 auto;
+}
+
+table{
+	width: 100%;
+}
+caption{
+	margin: 10px 0;
+	font-weight: bold;
+}
+
+table, tr, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td{
+	height: 45px;
+	box-sizing: border-box;
+	padding: 3px 5px;
+}
+.tdHead{
+	width: 120px;
+	text-align: center;
+}
+.inp{
+	box-sizing: border-box;
+	width: 170px;
+	height: 32px;
+}
+.birth{
+	box-sizing: border-box;
+	width: 120px;
+	height: 32px;
+}
+select{
+	box-sizing: border-box;
+	width: 85px;
+	height: 32px;
+}
+.btn{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 55px;
+	height: 30px;
+	text-align: center;
+}
+.btn2{
+	display: inline-block;
+	box-sizing: border-box;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+}
+.subTd{
+	text-align: center;
+}

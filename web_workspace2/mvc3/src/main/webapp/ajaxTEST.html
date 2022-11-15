@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>상품 조회</title>
+<link type="text/css" rel="stylesheet" href="goods.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+$.ajax(
+	{
+		type:"post",
+		dataType:"text",
+		url:"/mvc3/ajax2",
+		success:function(data, textStatus){
+			let goods = data;
+			let goodsList = goods.split('-');
+			//alert(goodsList);
+			$("#g_code").text(goodsList[0]);
+			$("#g_name").text(goodsList[1]);
+			$("#g_kind").text(goodsList[2]);
+			$("#g_price").text(goodsList[3]);
+		},
+		error:function(data, textStatus){
+			alert("error");
+		},
+		complete:function(data, textStatus){
+			alert("done");
+		}
+	}		
+);
+	
+</script>
+
+</head>
+<body>
+
+<h3>상품 조회</h3>
+ <table>
+   <tr>
+     <td>
+       상품코드
+     </td>
+     <td>
+       상품명
+     </td>
+     <td>
+       종류
+     </td>
+     <td>
+       상품금액
+     </td>
+   </tr>
+  
+
+    <tr>
+     <td id="g_code">  </td>
+     <td id="g_name">  </td>
+     <td id="g_kind">  </td>
+     <td id="g_price">  </td>
+   </tr>
+
+ </table>
+
+</body>
+</html>

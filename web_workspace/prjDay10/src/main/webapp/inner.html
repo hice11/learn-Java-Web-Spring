@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<div>
+</div>
+<script type="text/javascript">
+ //document.body.innerHTML="ddd";
+ let gugu = "";
+ for(let i=1; i<10; i++){
+	for(let j=2; j<10; j++){
+		gugu += j+"x"+i+"="+(j*i)+"&nbsp;&nbsp;&nbsp;";
+	}
+	gugu += "<br>";
+}
+ document.getElementsByTagName("div")[0].innerHTML= gugu;
+</script>
+</body>
+</html>

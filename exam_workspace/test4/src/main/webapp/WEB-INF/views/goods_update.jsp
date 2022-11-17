@@ -15,6 +15,7 @@
 <link rel="stylesheet" type="text/css" href="<%=path %>/list.css">
 <script type="text/javascript" src="<%=path %>/reg.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -33,25 +34,28 @@
 <form action="goods-update" method="post" id="frm">
   <table>
   <caption>상품 정보 변경</caption>
+<%
+  Goods goods = (Goods)request.getAttribute("goods");
+%>
     <tr>
-      <td>상품코드</td>
-      <td> <input type="text" name="goods_cd" readonly="readonly"> </td>
+      <td class="center">상품코드</td>
+      <td> <input type="text" name="goods_cd" readonly="readonly" value="<%= goods.getGoods_cd() %>"> </td>
     </tr>
     <tr>
-      <td>상품명</td>
-      <td> <input type="text" name="goods_nm"> </td>
+      <td class="center">상품명</td>
+      <td> <input type="text" name="goods_nm" value="<%= goods.getGoods_nm() %>"> </td>
     </tr>
     <tr>
-      <td>단가</td>
-      <td> <input type="text" name="goods_price"> </td>
+      <td class="center">단가</td>
+      <td> <input type="text" name="goods_price" value="<%= goods.getGoods_price() %>"> </td>
     </tr>
     <tr>
-      <td>원가</td>
-      <td> <input type="text" name="cost"> </td>
+      <td class="center">원가</td>
+      <td> <input type="text" name="cost" value="<%= goods.getCost() %>"> </td>
     </tr>
     <tr>
-      <td>입고일자</td>
-      <td> <input type="text" name="in_date" readonly="readonly"> </td>
+      <td class="center">입고일자</td>
+      <td> <input type="text" name="in_date" readonly="readonly" value="<%= goods.getIn_date() %>"> </td>
     </tr>
   
     <tr>

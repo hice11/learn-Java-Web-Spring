@@ -81,9 +81,30 @@ public class GoodsDao {
 	//한개의 상품 정보
 	public Goods selectOneGoods(String goods_cd) {
 		dbCon();
-		Goods goods;
-		String sql = "";
-		
+		Goods goods = new Goods();
+		String sql = "SELECT goods_nm, goods_price, cost, TO_CHAR(in_date, 'yyyy-mm-dd') "
+				+ "FROM goods_tbl_500 WHERE goods_cd = ? ";
+		try {
+			PreparedStatement pst = con.prepareStatement(sql);
+			pst.setString(1, goods_cd);
+			
+			ResultSet rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				String goods_nm = rs.getString(1);
+				int goods_price = rs.getInt(2);
+				int cost = rs.getInt(3);
+				String in_date = rs.getString(4);
+				goods = new Goods(goods_cd, goods_nm, goods_price, cost, in_date);
+			}
+			
+			rs.close();
+			pst.close();
+			con.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return goods;
 	}
@@ -98,6 +119,7 @@ public class GoodsDao {
 			pst.setInt(2, goods.getGoods_price());
 			pst.setInt(3, goods.getCost());
 			pst.setString(4, goods.getGoods_cd());
+			pst.executeUpdate();
 			
 			pst.close();
 			con.close();
@@ -112,9 +134,9 @@ public class GoodsDao {
 		dbCon();
 		ArrayList<StoreSales> list = new ArrayList<>();
 		String sql = "SELECT store_nm, s.store_cd, "
-				+ "  NVL(LTRIM (TO_CHAR(SUM(DECODE(pay_type,'01', sale_cnt*goods_price)),'999,999')) ,0) cash, "
-				+ "  NVL(LTRIM(TO_CHAR(SUM(DECODE(pay_type,'02', sale_cnt*goods_price)),'999,999')),0) card, "
-				+ "  LTRIM(TO_CHAR(SUM(sale_cnt*goods_price),'999,999')) tot "
+				+ "  NVL(LTRIM (TO_CHAR(SUM(DECODE(pay_type,'01', sale_cnt*goods_price)),'999,999')) ,0)||'원' cash, "
+				+ "  NVL(LTRIM(TO_CHAR(SUM(DECODE(pay_type,'02', sale_cnt*goods_price)),'999,999')),0)||'원' card, "
+				+ "  LTRIM(TO_CHAR(SUM(sale_cnt*goods_price),'999,999'))||'원' tot "
 				+ "FROM sale_tbl_500 s  "
 				+ "JOIN goods_tbl_500 g  "
 				+ "ON g.goods_cd = s.goods_cd  "
@@ -233,9 +255,10 @@ public class GoodsDao {
 		dao.dbCon();
 		ArrayList<Goods> list = dao.selectGoods();
 		ArrayList<StoreSales> list2 = dao.selectStoreSales();
-		for(StoreSales goods : list2) {
-			System.out.println(goods);
-		}
+//		for(StoreSales goods : list2) {
+//			System.out.println(goods);
+//		}
+		System.out.println(dao.selectOneGoods("110001"));
 	}
 
 }

@@ -40,6 +40,27 @@ public class Goods {
 	public String getIn_date() {
 		return in_date;
 	}
+	
+
+	public void setGoods_cd(String goods_cd) {
+		this.goods_cd = goods_cd;
+	}
+
+	public void setGoods_nm(String goods_nm) {
+		this.goods_nm = goods_nm;
+	}
+
+	public void setGoods_price(int goods_price) {
+		this.goods_price = goods_price;
+	}
+
+	public void setCost(int cost) {
+		this.cost = cost;
+	}
+
+	public void setIn_date(String in_date) {
+		this.in_date = in_date;
+	}
 
 	@Override
 	public String toString() {

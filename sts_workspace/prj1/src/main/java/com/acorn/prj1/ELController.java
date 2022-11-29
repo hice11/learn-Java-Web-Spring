@@ -14,7 +14,7 @@ public class ELController {
 	public String test1(Model m) {
 		m.addAttribute("id", "test");
 		
-		return "el1" ; //view ¿Ã∏ß
+		return "el1" ; //view Ïù¥Î¶Ñ
 	}
 	
 	@RequestMapping(value = "/el2",method = RequestMethod.GET)
@@ -25,13 +25,13 @@ public class ELController {
 		list.add("three");
 		m.addAttribute("list", list);
 		
-		return "el2" ; //view ¿Ã∏ß
+		return "el2" ; //view Ïù¥Î¶Ñ
 	}
 	
-	@RequestMapping(value = "/para1", method = RequestMethod.GET)
+	@RequestMapping(value = "/param1", method = RequestMethod.GET)
 	public String test2(String search) {
 		System.out.println("search "+search);
 		
-		return "para1"; //view ¿Ã∏ß
+		return "param1"; //view Ïù¥Î¶Ñ
 	}
 }

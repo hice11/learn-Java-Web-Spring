@@ -8,10 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
     <style>
       * {
         box-sizing: border-box;
@@ -80,31 +77,19 @@
     </script>
   </head>
   <body>
-    <form
-      action="<c:url value='/login'/>"
-      method="post"
-      onsubmit="return formCheck(this);"
-    >
+    <form action="<c:url value='/login'/>" method="post" onsubmit="return formCheck(this);">
       <h3 id="title">Login</h3>
       <div id="msg">
         <!-- <c:if test="${not empty param.msg}"> -->
         <!--  <i class="fa fa-exclamation-circle"> ${URLDecoder.decode(param.msg)}</i>   -->
-        <div class="fa fa-exclamation-circle">
-          ${URLDecoder.decode(param.msg)}
-        </div>
+        <div class="fa fa-exclamation-circle">${URLDecoder.decode(param.msg)}</div>
         <!-- </c:if> -->
       </div>
-      <input type="text" name="id" placeholder="이메일 입력"
-        value="${cookie.id.value}"
-        autofocus
-      />
+      <input type="text" name="id" placeholder="이메일 입력" value="${cookie.id.value}" autofocus />
       <input type="password" name="pw" placeholder="비밀번호" />
       <button>로그인</button>
       <div>
-        <label
-          ><input type="checkbox" name="rememberId" ${empty cookie.id.value ?""
-          : "checked"} > 아이디 기억</label
-        >
+        <label><input type="checkbox" name="rememberId" ${empty cookie.id.value ?"" : "checked"} > 아이디 기억</label>
         | <a href="">비밀번호 찾기</a> |
         <a href="">회원가입</a>
       </div>

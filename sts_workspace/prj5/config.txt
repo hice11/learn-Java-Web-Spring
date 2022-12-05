@@ -1,0 +1,1 @@
+animal = com.acorn.prj5.di.Dog

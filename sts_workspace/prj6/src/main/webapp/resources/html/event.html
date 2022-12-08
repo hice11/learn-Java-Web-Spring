@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      window.addEventListener('load', init2);
+
+      function init1() {
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', () => alert('나 클릭1'));
+        btn.addEventListener('click', () => alert('나 클릭2'));
+      }
+
+      function init2() {
+        let btn = document.getElementById('btn');
+        btn.onclick = () => alert('나 클릭1');
+        btn.onclick = () => alert('나 클릭2');
+      }
+    </script>
+  </head>
+  <body>
+    <button id="btn">버튼</button>
+  </body>
+</html>

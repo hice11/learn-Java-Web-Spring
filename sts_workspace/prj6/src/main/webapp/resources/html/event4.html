@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      body * {
+        margin: 10px;
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      FORM
+      <div>
+        DIV
+        <p>P</p>
+      </div>
+    </form>
+
+    <script>
+      //기본 false -> 버블링, 나가는것
+      // true -> 캡처링, 들어오는것
+      for (let elem of document.querySelectorAll('*')) {
+        elem.addEventListener('click', (e) => alert(`캡쳐링: ${elem.tagName}`), true);
+        elem.addEventListener('click', (e) => alert(`버블링: ${elem.tagName}`));
+      }
+    </script>
+  </body>
+</html>

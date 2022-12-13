@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .wrap{
+            position: relative;
+            width:500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        .btn{   
+            position: absolute;       
+            background-color: red;
+            
+            /* left , top, bottom , right   - position: static   사용불가 */
+        }
+        .left{
+            left:0px;
+        }
+        .right{
+            right:0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="btn right">버튼1</div>
+        <div class="btn left">버튼2</div>
+    </div>
+    
+</body>
+</html>

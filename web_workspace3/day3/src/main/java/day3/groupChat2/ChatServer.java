@@ -35,10 +35,11 @@ public class ChatServer {
 	}
 	
 	 
-	public synchronized  void broadcast(String message) {	  
+	public synchronized  void broadcast(String message, ChatHandler ch) {	  
 
-		for(int i=0; i<  v.size(); i++) {				 
+		for(int i=0; i<  v.size(); i++) {	
 			ChatHandler c = v.get(i);
+			if(c == ch) continue;
 			try {
 				c.disp(message);
 			}catch(Exception e) {

@@ -28,13 +28,13 @@ public class ChatHandler  extends Thread{
 		try {
 			name=in.readUTF();
 			cs.register(this);   //생성된 객체를(chatHadler 객체)서버의 배열(벡터)에 담기
-			cs.broadcast(name + "님이 방문하셨습니다");
+			cs.broadcast(name + "님이 방문하셨습니다",this);
 			
 			while(true) {
 				String msg =in.readUTF();
-				cs.unregister(this);
-				cs.broadcast(name + "님의 말:" + msg);
-				cs.register(this);
+				//cs.unregister(this);
+				cs.broadcast(name + "님의 말:" + msg,this);
+				//cs.register(this);
 			}			
 			
 		}catch(Exception e) {			 
@@ -42,7 +42,7 @@ public class ChatHandler  extends Thread{
 		}
 		
 		cs.unregister(this); //생성된 객체를(chatHadler 객체)서버의 배열(벡터)에서 제거하기
-		cs.broadcast(name + "님이 나가셨습니다");
+		cs.broadcast(name + "님이 나가셨습니다",this);
 		
 		//쓰레드 종료전에 모든 스트림 종료
 		try {

@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<c:set var="path" value="${pageContext.request.contextPath}"></c:set>
+<jsp:include page="/resources/index.jsp" />
 
   <form action="<c:url value="/login" />" method="post">
     <input type="text" name="id" placeholder="아이디">

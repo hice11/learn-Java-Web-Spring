@@ -14,45 +14,44 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MemberDaoMybatis {
-    @Autowired
-    private SqlSession session;
-    private static String namespace = "com.acorn.woo.MemberMapper.";
 
-    public int count() throws Exception {
-        return session.selectOne(namespace+"count");
-    }  
-   
-   
-    public List<Member> selectAll() throws Exception {
-        return session.selectList(namespace+"selectAll");
-    } // List<E> selectList(String statement)
+	@Autowired
+	private SqlSession session;
+	private static String namespace = "com.acorn.prj8.MemberMapper.";
 
-   
-    
-    public int deleteAll()  throws Exception{
-        return session.delete(namespace+"deleteAll");
-    } // int delete(String statement)
+	public int count() throws Exception {
+		return session.selectOne(namespace+"count");
+	}  
 
-    
-    public int delete( String id) throws Exception {       
-        return session.delete(namespace+"delete", id);
-    } // int delete(String statement, Object parameter)
+	public List<Member> selectAll() throws Exception {
+		return session.selectList(namespace+"selectAll");
+	} // List<E> selectList(String statement)
 
-    public int insert(Member dto) throws Exception {
-        return session.insert(namespace+"insert", dto);
-    } // int insert(String statement, Object parameter)
 
-    
-    public Member select(Integer bno) throws Exception {
-        return session.selectOne(namespace + "select", bno);
-    } // T selectOne(String statement, Object parameter)
 
-    // List<E> selectList(String statement, Object parameter)
+	public int deleteAll()  throws Exception{
+		return session.delete(namespace+"deleteAll");
+	} // int delete(String statement)
 
-    
-    public int update(Member dto) throws Exception {
-        return session.update(namespace+"update", dto);
-    } // int update(String statement, Object parameter)
+
+	public int delete( String id) throws Exception {       
+		return session.delete(namespace+"delete", id);
+	} // int delete(String statement, Object parameter)
+
+	public int insert(Member dto) throws Exception {
+		return session.insert(namespace+"insert", dto);
+	} // int insert(String statement, Object parameter)
+
+
+	public Member select(Integer bno) throws Exception {
+		return session.selectOne(namespace + "select", bno);
+	} // T selectOne(String statement, Object parameter)
+
+	// List<E> selectList(String statement, Object parameter)
+
+	public int update(Member dto) throws Exception {
+		return session.update(namespace+"update", dto);
+	} // int update(String statement, Object parameter)
 
 }
  

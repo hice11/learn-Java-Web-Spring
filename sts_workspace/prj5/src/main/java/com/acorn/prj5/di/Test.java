@@ -20,6 +20,9 @@ public class Test {
 		System.out.println(date);
 		String time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HHmmss"));
 		System.out.println(time);
+		
+		String a = "aaa";
+		System.out.println(a.split(",")[0]); 
 
 	}
 
